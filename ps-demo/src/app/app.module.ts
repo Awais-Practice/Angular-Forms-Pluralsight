@@ -2,12 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { from } from 'rxjs';
-import {FormsModule} from '@angular/forms'
+import {FormsModule} from '@angular/forms';
+import { UserSettingFormComponent } from './user-setting-form/user-setting-form.component'
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserSettingFormComponent
   ],
   imports: [
     BrowserModule,
