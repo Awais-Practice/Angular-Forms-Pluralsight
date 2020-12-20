@@ -8,7 +8,7 @@ import {UserSettings} from '../data/user-setteng'
   styleUrls: ['./user-setting-form.component.css']
 })
 export class UserSettingFormComponent implements OnInit {
-  userSettings:UserSettings={
+  originalUserSettings:UserSettings={
     name:'awais',
     emailoffers:true,
     notes:"this is first style",
@@ -16,6 +16,8 @@ export class UserSettingFormComponent implements OnInit {
     subscriptionType:'annual'
 
   }
+  userSettings:UserSettings={...this.originalUserSettings}
+  
 
   constructor() { }
 
