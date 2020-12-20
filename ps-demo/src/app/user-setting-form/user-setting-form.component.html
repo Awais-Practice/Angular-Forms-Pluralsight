@@ -2,10 +2,11 @@
   <h2>
     User Settings
   </h2>
-  <form>
+  <form ngNativeValidate>
   <div class="form-group">
     <label for="name"Name></label>
-    <input  id="name" name="name" class="form-control" placeholder="Name" [(ngModel)]="userSettings.name" >
+    <input  id="name" name="name" class="form-control" placeholder="Name"
+     [(ngModel)]="userSettings.name" required minlength="4" maxlength="8" >
   </div>
   <div class="form-check form-group">
     <input type="checkbox" class="form-check-inout" id="emailoffers" name="emailoffers" [(ngModel)]="userSettings.emailoffers" >  
