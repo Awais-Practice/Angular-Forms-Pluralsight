@@ -2,13 +2,13 @@
   <h2>
     User Settings
   </h2>
-  <form action="">
+  <form>
   <div class="form-group">
     <label for="name"Name></label>
-    <input  id="name" class="form-control" placeholder="Name">
+    <input  id="name" name="name" class="form-control" placeholder="Name" [(ngModel)]="userSettings.name" >
   </div>
   <div class="form-check form-group">
-    <input type="checkbox" class="form-check-inout" id="emailoffers" name="emailoffers">  
+    <input type="checkbox" class="form-check-inout" id="emailoffers" name="emailoffers" [(ngModel)]="userSettings.emailoffers" >  
     <label class="form-check-lable" for="emailoffers">
       Email Special Offers
     </label>
@@ -18,27 +18,27 @@
   </p>
 <div class="form-group">
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="light" checked [(ngModel)]="userSettings.interfaceStyle">
     <label class="form-check-label" for="exampleRadios1">
-      Default radio
+      Light 
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="medium" checked [(ngModel)]="userSettings.interfaceStyle">
     <label class="form-check-label" for="exampleRadios2">
-      Second default radio
+      Medium 
     </label>
   </div>
   <div class="form-check disabled">
-    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" disabled>
+    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="dark"checked [(ngModel)]="userSettings.interfaceStyle">
     <label class="form-check-label" for="exampleRadios3">
-      Disabled radio
+      Dark 
     </label>
   </div>
 </div>
 <div class="form-group">
-  <label for="exampleFormControlSelect1">SubScription Type</label>
-  <select class="form-control" id="exampleFormControlSelect1">
+  <label for="exampleFormControlSelect1" >SubScription Type</label>
+  <select class="form-control" id="exampleFormControlSelect1" name="selectPlane" [(ngModel)]="userSettings.subscriptionType">
     <option>Monthly</option>
     <option>Annual</option>
     <option>Life time</option>
@@ -46,7 +46,7 @@
 </div>
 <div class="form-group">
   <label for="exampleFormControlTextarea1">Notes</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  <textarea class="form-control" id="exampleFormControlTextarea1" name="awais" rows="3" [(ngModel)]="userSettings.notes"></textarea>
 </div>
 <!-- <div class="form-group">
   <label for="exampleInputPassword1">Password</label>
@@ -63,3 +63,4 @@
   <button class="btn btn-primary">Send</button>
   </form>
 </div>
+{{userSettings | json}}
